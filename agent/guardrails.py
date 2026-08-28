@@ -176,8 +176,9 @@ def scan_for_injected_instructions(text: str) -> InjectionScanResult:
     lowered = text.lower()
     patterns = (
         "ignore previous instructions", "ignore all previous", "disregard the above",
-        "system override", "you must now", "reveal the", "grading key",
-        "bỏ qua mọi hướng dẫn",
+        "disregard prior", "disregard previous", "system override", "you must now",
+        "reveal the", "grading key", "bỏ qua mọi hướng dẫn", "important system update",
+        "new instruction", "instead of", "act as", "forget all", "admin override",
     )
     return InjectionScanResult(
         suspicious=any(pattern in lowered for pattern in patterns),
